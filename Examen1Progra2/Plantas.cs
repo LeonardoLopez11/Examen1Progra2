@@ -60,5 +60,9 @@ namespace Examen1Progra2
             }
             return true;
         }
+        public override string ToString()
+        {
+            return $"{Nombre} - Valor de la semilla: {ValorSemilla} - Valor del producto: {ValorProducto}";
+        }
     }
 }

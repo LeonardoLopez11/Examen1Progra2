@@ -13,6 +13,7 @@ namespace Examen1Progra2
         public int ParcelasCompradas { get; private set; }
         private decimal precioParcelaBase;
         private decimal precioParcelaActual;
+        public decimal Dinero { get; private set; }
 
         public Granja(decimal precioParcelaBase)
         {
@@ -21,9 +22,17 @@ namespace Examen1Progra2
             ParcelasCompradas = 0;
             this.precioParcelaBase = precioParcelaBase;
             this.precioParcelaActual = precioParcelaBase;
+            Dinero = 0; 
+
         }
 
-        
+        public void IntroducirDineroInicial(decimal cantidad)
+        {
+            Dinero = cantidad;
+            Console.WriteLine($"Se ha introducido {cantidad} monedas de dinero inicial.");
+        }
+
+
         public void AgregarPlanta(Plantas planta)
         {
             Plantas.Add(planta);

@@ -46,5 +46,9 @@ namespace Examen1Progra2
                 return false; 
             }
         }
+        public override string ToString()
+        {
+            return $"{Nombre}";
+        }
     }
 }
