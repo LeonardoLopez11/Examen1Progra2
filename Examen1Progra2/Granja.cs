@@ -50,7 +50,11 @@ namespace Examen1Progra2
             Console.WriteLine("Plantas en la granja:");
             foreach (var planta in Plantas)
             {
-                Console.WriteLine(planta.Nombre);
+                Console.WriteLine($"- {planta.Nombre}. Tiempo de vida: {planta.TiempoVida}");
+                if (planta.TiempoVida == 0)
+                {
+                    Console.WriteLine($"   (Listo para cosechar: puedes recolectar {planta.CalcularCantidadProductos()} productos)");
+                }
             }
         }
 
@@ -60,7 +64,11 @@ namespace Examen1Progra2
             Console.WriteLine("Animales en la granja:");
             foreach (var animal in Animales)
             {
-                Console.WriteLine(animal.Nombre);
+                Console.WriteLine($"- {animal.Nombre}. Tiempo de vida: {animal.TiempoVida}");
+                if (animal.TiempoVida == 0)
+                {
+                    Console.WriteLine($"   (Listo para recolectar: puedes recolectar {animal.CantidadProductos} productos)");
+                }
             }
         }
 
@@ -81,6 +89,36 @@ namespace Examen1Progra2
             {
                 Console.WriteLine("Respuesta inválida. Por favor, responda 'Sí' o 'No'.");
             }
+        }
+        public void PasarTurno()
+        {
+            Console.WriteLine("Pasar turno...");
+
+            
+            foreach (var planta in Plantas)
+            {
+                if (planta.TiempoVida == 0)
+                {
+                    Console.WriteLine($"¡Cosechaste una {planta.Nombre} y obtuviste {planta.CalcularCantidadProductos()} productos!");
+                    Plantas.Remove(planta);
+                    break; 
+                }
+                planta.TiempoVida--; 
+            }
+
+            
+            foreach (var animal in Animales)
+            {
+                if (animal.TiempoVida == 0)
+                {
+                    Console.WriteLine($"¡El {animal.Nombre} ha dado {animal.CantidadProductos} productos!");
+                }
+                animal.TiempoVida--; 
+            }
+
+            
+            MostrarPlantas();
+            MostrarAnimales();
         }
     }
 }

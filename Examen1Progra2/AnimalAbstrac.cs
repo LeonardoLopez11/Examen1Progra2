@@ -8,9 +8,9 @@ namespace Examen1Progra2
 {
     public abstract class AnimalB : InterfazAnimal
     {
-        public string Nombre { get; }
-        public int TiempoVida { get; }
-        public int CantidadProductos { get; }
+        public string Nombre { get; set; }
+        public int TiempoVida { get; set; }
+        public int CantidadProductos { get; set; }
 
         public AnimalB(string nombre, int tiempoVida, int cantidadProductos)
         {

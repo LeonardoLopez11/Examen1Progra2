@@ -34,7 +34,8 @@ namespace Examen1Progra2
                 Console.WriteLine("3. Comprar un animal");
                 Console.WriteLine("4. Mostrar plantas en la granja");
                 Console.WriteLine("5. Mostrar animales en la granja");
-                Console.WriteLine("6. Salir");
+                Console.WriteLine("6. Pasar turno");
+                Console.WriteLine("7. Salir");
                 Console.WriteLine("Seleccione una opción:");
 
                 string opcion = Console.ReadLine();
@@ -59,6 +60,9 @@ namespace Examen1Progra2
                         granja.MostrarAnimales();
                         break;
                     case "6":
+                        granja.PasarTurno();
+                        break;
+                    case "7":
                         continuar = false;
                         break;
                     default:
